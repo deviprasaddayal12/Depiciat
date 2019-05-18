@@ -1,6 +1,5 @@
 package com.deviprasaddayal.depiciat.activities
 
-import android.animation.FloatArrayEvaluator
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -11,8 +10,8 @@ import com.deviprasaddayal.depiciat.R
 import com.deviprasaddayal.depiciat.adapters.ListPolicyAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListPolicyActivity : BaseActivity() {
-    public val TAG = "ListPolicyActivity"
+class ListPolicyActivity : BaseActivity(), View.OnClickListener {
+    val TAG = ListPolicyActivity::class.java.canonicalName
 
     private val REQUEST_ADD_NEW_POLICY = 123
 
@@ -35,19 +34,24 @@ class ListPolicyActivity : BaseActivity() {
     }
 
     override fun initialiseListeners() {
-        fabNewPolicy.setOnClickListener(View.OnClickListener {
-            val addNewPolicyIntent = Intent(this, AddNewPolicy::class.java)
-            startActivityForResult(addNewPolicyIntent, REQUEST_ADD_NEW_POLICY)
-        })
-    }
-
-    override fun setUpRecycler(){
-        // todo update recycler
+        fabNewPolicy.setOnClickListener(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == REQUEST_ADD_NEW_POLICY && resultCode == Activity.RESULT_OK){
-            // todo update recycler
+        if (requestCode == REQUEST_ADD_NEW_POLICY && resultCode == Activity.RESULT_OK) {
+
         }
+    }
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.fab_add_new_policy -> gotoCreateNewPolicy()
+        }
+    }
+
+    private fun gotoCreateNewPolicy() {
+        Toast.makeText(this, "Implementing soon...", Toast.LENGTH_SHORT).show()
+        val addNewPolicyIntent = Intent(this, AddNewPolicy::class.java)
+        startActivityForResult(addNewPolicyIntent, REQUEST_ADD_NEW_POLICY)
     }
 }
