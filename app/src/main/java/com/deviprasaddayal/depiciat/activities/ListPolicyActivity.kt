@@ -33,7 +33,7 @@ class ListPolicyActivity : BaseActivity() {
 
     override fun setUpToolbar() {
         toolbar = findViewById(R.id.toolbar)
-        toolbar.title = "Policies"
+        toolbar.title = "Hello, Dayal"
     }
 
     override fun setUpRecycler() {

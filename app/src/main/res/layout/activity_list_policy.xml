@@ -9,16 +9,36 @@
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="192dp">
 
-        <include layout="@layout/layout_toolbar"/>
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:titleEnabled="false"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <include layout="@layout/layout_toolbar"/>
+
+            <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Hello, Dayal"-->
+                    <!--style="@style/TextAppearance.MaterialComponents.Headline4"-->
+                    <!--android:layout_marginTop="56dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--app:layout_collapseMode="parallax"/>-->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/recycler_list_policies"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:behavior_overlapTop="52dp"
             tools:listitem="@layout/row_policy"
             tools:itemCount="20">
 
