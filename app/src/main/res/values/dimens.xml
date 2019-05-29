@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_rowCardStart">16dp</dimen>
+    <dimen name="margin_rowCardEnd">16dp</dimen>
+    <dimen name="margin_rowCardTop">8dp</dimen>
+    <dimen name="margin_rowCardBottom">8dp</dimen>
+    <dimen name="radius_rowCard">8dp</dimen>
+    <dimen name="elevation_rowCard">4dp</dimen>
+    <dimen name="padding_childRoot">16dp</dimen>
+    <dimen name="margin_fromTopViewVertically">8dp</dimen>
+</resources>

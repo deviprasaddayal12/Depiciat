@@ -1,8 +1,9 @@
 package com.deviprasaddayal.depiciat.activities
 
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity : AppCompatActivity(){
+abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
 
     override fun setContentView(layoutResID: Int) {
         super.setContentView(layoutResID)
@@ -24,4 +25,8 @@ abstract class BaseActivity : AppCompatActivity(){
     open fun setUpViewPager(){}
 
     open fun setUpRecycler(){}
+
+    override fun onClick(v: View?) {
+        // to be implemented in extending classes
+    }
 }

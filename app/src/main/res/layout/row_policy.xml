@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.transformation.TransformationChildCard
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_rowCardStart"
+        android:layout_marginEnd="@dimen/margin_rowCardEnd"
+        android:layout_marginTop="@dimen/margin_rowCardTop"
+        android:layout_marginBottom="@dimen/margin_rowCardBottom"
+        app:cardCornerRadius="@dimen/radius_rowCard"
+        app:cardElevation="@dimen/elevation_rowCard">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_childRoot">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dayal Deviprasad Das"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tv_nameBearer"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Premium: Rs 1200/- @Quaterly"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:id="@+id/tv_premiumDetails"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_fromTopViewVertically"
+                android:text="Next Due: 15th June, 2019"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/tv_dueNext"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_fromTopViewVertically"
+                android:text="Policy Number: AZ1287FBH456"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:id="@+id/tv_numberPolicy"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Due: 15th March, 2019"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:id="@+id/tv_dueLast"/>
+
+    </LinearLayout>
+
+</com.google.android.material.transformation.TransformationChildCard>

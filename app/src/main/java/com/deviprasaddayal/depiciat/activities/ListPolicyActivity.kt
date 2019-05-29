@@ -5,18 +5,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deviprasaddayal.depiciat.R
 import com.deviprasaddayal.depiciat.adapters.ListPolicyAdapter
+import com.deviprasaddayal.depiciat.models.RowPolicyModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListPolicyActivity : BaseActivity(), View.OnClickListener {
+class ListPolicyActivity : BaseActivity() {
     val TAG = ListPolicyActivity::class.java.canonicalName
 
     private val REQUEST_ADD_NEW_POLICY = 123
 
+    lateinit var toolbar: Toolbar
+
     lateinit var recyclerView: RecyclerView
     lateinit var adapterPolicyList: ListPolicyAdapter
+    lateinit var policyModels: ArrayList<RowPolicyModel>
+
     lateinit var fabNewPolicy: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +32,19 @@ class ListPolicyActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun setUpToolbar() {
+        toolbar = findViewById(R.id.toolbar)
+        toolbar.title = "Policies"
+    }
 
+    override fun setUpRecycler() {
+        policyModels = ArrayList()
+        recyclerView = findViewById(R.id.recycler_list_policies)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapterPolicyList = ListPolicyAdapter(this, policyModels)
+        recyclerView.adapter = adapterPolicyList
     }
 
     override fun initialiseViews() {
-        recyclerView = findViewById(R.id.recycler_list_policies)
         fabNewPolicy = findViewById(R.id.fab_add_new_policy)
     }
 
@@ -43,8 +58,8 @@ class ListPolicyActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    override fun onClick(v: View) {
-        when (v.id) {
+    override fun onClick(v: View?) {
+        when (v?.id) {
             R.id.fab_add_new_policy -> gotoCreateNewPolicy()
         }
     }
