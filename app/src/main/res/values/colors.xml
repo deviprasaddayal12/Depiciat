@@ -3,5 +3,22 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorDialog_infoDelete">#585858</color>
+    <color name="colorDialog_infoInput">#E5A71F</color>
+    <color name="colorDialog_infoLogout">#C3D11B</color>
+    <color name="colorDialog_infoNetwork">#8085FA</color>
+    <color name="colorDialog_infoUpdate">#21AAFF</color>
+    <color name="colorDialog_infoWrong">#EB6170</color>
+    <color name="colorDialog_infoYellow">#FFC10E</color>
+
+    <color name="colorTextLight">#78909c</color>
+    <color name="colorText">#455a64</color>
+    <color name="colorText2">#37474f</color>
+    <color name="colorTextDark">#263238</color>
+
+    <color name="colorGrayLight">#78909c</color>
+    <color name="colorGray">#455a64</color>
 </resources>

@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MaterialSeparator">
+        <item name="android:background">@drawable/separator_capsule_accent</item>
+    </style>
+
+    <style name="Horizontal" parent="MaterialSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_separatorVertical</item>
+        <item name="android:layout_marginBottom">@dimen/margin_separatorVertical</item>
+    </style>
+
+    <style name="Vertical"  parent="MaterialSeparator">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">@dimen/margin_separatorHorizontal</item>
+        <item name="android:layout_marginEnd">@dimen/margin_separatorHorizontal</item>
+    </style>
+    <dimen name="margin_separatorHorizontal">4dp</dimen>
+    <dimen name="margin_separatorVertical">4dp</dimen>
 </resources>

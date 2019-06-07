@@ -8,4 +8,12 @@
     <dimen name="elevation_rowCard">4dp</dimen>
     <dimen name="padding_childRoot">16dp</dimen>
     <dimen name="margin_fromTopViewVertically">8dp</dimen>
+    <dimen name="text_10">10sp</dimen>
+    <dimen name="margin_side_to_side">16dp</dimen>
+    <dimen name="padding_iconMedium">12dp</dimen>
+    <dimen name="margin_rowHorizontal">16dp</dimen>
+    <dimen name="margin_rowVertical">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="padding_iconSmall">4dp</dimen>
+    <dimen name="padding_textStart">4dp</dimen>
 </resources>
