@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.camera2.CameraCharacteristics;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -44,19 +45,16 @@ public class FileManager implements OnFileSourceChoiceListener {
 
     private Activity activity;
     private OnFileActionListener onFileActionListener;
-    private int module;
+
+    private String namePrefix;
+    private File storageDest;
 
     private AlertDialog dialogViewer;
 
     public FileManager(Activity activity, OnFileActionListener onFileActionListener) {
         this.activity = activity;
         this.onFileActionListener = onFileActionListener;
-    }
-
-    public FileManager(Activity activity, OnFileActionListener onFileActionListener, int module) {
-        this.activity = activity;
-        this.onFileActionListener = onFileActionListener;
-        this.module = module;
+        this.storageDest = null;
     }
 
     /**
@@ -103,6 +101,11 @@ public class FileManager implements OnFileSourceChoiceListener {
         gotoFileBrowser();
     }
 
+    public void gotoCamera(String namePrefix) {
+        this.namePrefix = namePrefix;
+        gotoCamera();
+    }
+
     public void gotoCamera() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(activity,
@@ -138,8 +141,33 @@ public class FileManager implements OnFileSourceChoiceListener {
     }
 
     private synchronized File createImageFile() throws IOException {
-        return File.createTempFile("IMG_" + DateUtils.getImageTimeStamp(), ".jpg",
-                activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES));
+        storageDest = storageDest == null ? activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES) : storageDest;
+
+        namePrefix = namePrefix == null ? "IMG_" : namePrefix;
+
+        String fileName = namePrefix + DateUtils.getImageTimeStamp();
+        String fullFileName = fileName + ".jpg";
+
+//        File generatedFile;
+//        if (storageDest != null)
+//            generatedFile = new File(storageDest, fullFileName);
+//        else
+//            generatedFile = File.createTempFile(fileName, ".jpg", storageDest);
+//
+//        File generatedFile = File.createTempFile(fileName, ".jpg", storageDest);
+//        File renamedFile = new File(storageDest, fullFileName);
+//
+//        Log.i(TAG, "createImageFile: " + generatedFile.getAbsolutePath());
+//
+//        if (generatedFile.renameTo(renamedFile))
+//            Log.i(TAG, "createImageFile: renamedFile = " + renamedFile.getAbsolutePath());
+//        else
+//            Log.i(TAG, "createImageFile: generatedFile = " + generatedFile.getAbsolutePath());
+
+        File imageFile = new File(storageDest, fullFileName);
+        Log.i(TAG, "createImageFile: imageFile = " + imageFile.getAbsolutePath());
+
+        return imageFile;
     }
 
     public void gotoGallery() {

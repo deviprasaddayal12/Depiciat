@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.AddNewPolicy" />
+        <activity android:name=".activities.AddPolicyActivity" />
 
         <provider
                 android:name="androidx.core.content.FileProvider"

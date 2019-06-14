@@ -1,6 +1,5 @@
 package com.deviprasaddayal.depiciat.utils;
 
-import android.animation.LayoutTransition;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -9,15 +8,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.InputFilter;
 import android.text.Spanned;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import com.deviprasaddayal.depiciat.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Atul on 5/4/18.
@@ -28,6 +24,23 @@ public class Utils {
 
     private static final int digitsBeforeDecimal = 8, digitsAfterDecimal = 3;
     private static final String decimal = ".";
+
+    private static final boolean shouldLog = true;
+
+    public static void loge(String tag, String message) {
+        if (shouldLog)
+            Log.e(tag, message);
+    }
+
+    public static void logi(String tag, String message) {
+        if (shouldLog)
+            Log.i(tag, message);
+    }
+
+    public static void logd(String tag, String message) {
+        if (shouldLog)
+            Log.d(tag, message);
+    }
 
     public static Runnable getBackRunnable(final Activity activity){
         return new Runnable() {
@@ -85,7 +98,7 @@ public class Utils {
      *
      * @return inputFilter for the field with specified restriction
      */
-    public static InputFilter getQuantityThresholdFilter() {
+    public static InputFilter getFloatMaxThreshold() {
         return new InputFilter() {
             @Override
             public CharSequence filter(CharSequence charSequence, int i, int i1, Spanned spanned, int i2, int i3) {
@@ -111,10 +124,10 @@ public class Utils {
         };
     }
 
-    public static InputFilter[] getQuantityFilters() {
-        InputFilter quantityThresholdFilter = getQuantityThresholdFilter();
-        InputFilter quantityLengthFilter = new InputFilter.LengthFilter(10);
-        return new InputFilter[]{quantityThresholdFilter, quantityLengthFilter};
+    public static InputFilter[] getMaxFloatFilters() {
+        InputFilter floatMaxThresholdFilter = getFloatMaxThreshold();
+        InputFilter floatMaxLengthFilter = new InputFilter.LengthFilter(10);
+        return new InputFilter[]{floatMaxThresholdFilter, floatMaxLengthFilter};
     }
 
     public static void hideSoftKeyboard(Context context) {
@@ -141,30 +154,6 @@ public class Utils {
         }
         return status;
 
-    }
-
-    public static String convertMilliSecondsToDate(long milliseconds) {
-        String dateString = new SimpleDateFormat("dd MMM yyyy").format(new Date(milliseconds));
-        return dateString;
-    }
-
-    public static String checkNullValues(String msg) {
-        if (msg.equalsIgnoreCase("null"))
-            return "";
-        else
-            return msg;
-    }
-
-    public static long convertDateToMilliseconds(String date) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date dateObj = sdf.parse(date);
-            long millis = dateObj.getTime();
-            return millis;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
     }
 
     public static int parseInt(String value) {
@@ -203,58 +192,17 @@ public class Utils {
         }
     }
 
-    /**
-     * This callback is used to block invalid string like: null, "null" or simply nothing
-     *
-     * @param stringToBeModified the string as parameter to be checked for validity
-     * @return returns the same as parameter if it is valid else a hyphen
-     */
-    public static String getValidString(String stringToBeModified) {
-        if (stringToBeModified == null || stringToBeModified.equals("null") || stringToBeModified.equals("")) {
-            return "-";
-        } else
-            return stringToBeModified;
-    }
-
-    /**
-     * This callback is used to block invalid string like: null and "null"
-     *
-     * @param stringToBeModified the string as parameter to be checked for validity
-     * @return returns the same as parameter if it is valid else nothing, i.e. a blank string and avoids hyphen
-     */
-    public static String getValidStringWithoutHyphen(String stringToBeModified) {
-        if (stringToBeModified == null || stringToBeModified.equals("null")) {
-            return "";
-        } else
-            return stringToBeModified;
-    }
-
-    /**
-     * This callback is used to block invalid string like: null and "null"
-     *
-     * @param stringToBeEdited the string as parameter to be checked for validity
-     * @return returns the same as parameter if it is valid else nothing, i.e. a blank string and avoids hyphen
-     */
-    public static String getUnderScoreRemovedString(String stringToBeEdited) {
-        if (stringToBeEdited == null || stringToBeEdited.equals("null")) {
-            stringToBeEdited = "-";
-            return stringToBeEdited;
-        } else {
-            return stringToBeEdited.replace('_', ' ');
-        }
-    }
-
-    public static final int RETURN_EMPTY_STRING_IF_NULL = 0;
-    public static final int RETURN_HYPHEN_STRING_IF_NULL = 1;
+    public static final int RETURN_EMPTY_IF_NULL = 0;
+    public static final int RETURN_HYPHEN_IF_NULL = 1;
     public static final int REPLACE_UNDERSCORE_WITH_SPACE = 2;
     public static final int REPLACE_UNDERSCORE_WITH_HYPHEN = 3;
-    public static final int ADD_SPACE_IF_EMPTY = 4;
+    public static final int RETURN_SPACE_IF_EMPTY = 4;
     public static final int RETURN_EMPTY_IF_HYPHEN = 5;
 
-    public static String[] filterString(int type, String... toBeFiltered) {
+    public static String[] toValidString(int type, String... toBeFiltered) {
         ArrayList<String> filteredStrings = new ArrayList<>();
         for (String string : toBeFiltered) {
-            filteredStrings.add(filterString(type, string));
+            filteredStrings.add(toValidString(type, string));
         }
 
         String[] filtered = new String[filteredStrings.size()];
@@ -264,19 +212,19 @@ public class Utils {
         return filtered;
     }
 
-    public static String filterString(int type, String toBeFiltered) {
+    public static String toValidString(int type, String toBeFiltered) {
         toBeFiltered = (toBeFiltered == null || toBeFiltered.equals("null")) ? "" : toBeFiltered;
 
         switch (type) {
-            case RETURN_EMPTY_STRING_IF_NULL:
+            case RETURN_EMPTY_IF_NULL:
                 return toBeFiltered;
-            case RETURN_HYPHEN_STRING_IF_NULL:
+            case RETURN_HYPHEN_IF_NULL:
                 return toBeFiltered.isEmpty() ? "-" : toBeFiltered;
             case REPLACE_UNDERSCORE_WITH_SPACE:
                 return toBeFiltered.replace('_', ' ');
             case REPLACE_UNDERSCORE_WITH_HYPHEN:
                 return toBeFiltered.replace('_', '-');
-            case ADD_SPACE_IF_EMPTY:
+            case RETURN_SPACE_IF_EMPTY:
                 return toBeFiltered.isEmpty() ? " " : toBeFiltered;
             case RETURN_EMPTY_IF_HYPHEN:
                 return toBeFiltered.contains("-") && toBeFiltered.length() == 1 ? "" : toBeFiltered;
@@ -285,21 +233,12 @@ public class Utils {
         }
     }
 
-    public static boolean getBoolean(int value) {
+    public static String toHyphen(String toBeChanged) {
+        return toValidString(RETURN_HYPHEN_IF_NULL, toBeChanged);
+    }
+
+    public static boolean toBoolean(int value) {
         return value == 1;
-    }
-
-    public static void animateLayoutChanges(View view) {
-        LayoutTransition layoutTransition = new LayoutTransition();
-        layoutTransition.enableTransitionType(LayoutTransition.CHANGING);
-        ((ViewGroup) view).setLayoutTransition(layoutTransition);
-    }
-
-    public static String replaceUnderscoreWithHyphen(String text) {
-        if (text.contains("_"))
-            return text.replace('_', '-');
-        else
-            return text;
     }
 
     public static boolean isGreaterInDoubles(String s1, String s2) {
@@ -308,17 +247,6 @@ public class Utils {
 
     public static boolean isGreaterInDoubles(double d1, double d2) {
         return (d1 > d2);
-    }
-
-    public static boolean isInvalidString(EditText editText) {
-        String text = editText.getText().toString();
-        if (editText.getError() != null || text.length() == 0)
-            return true;
-        return false;
-    }
-
-    public static boolean isInvalidString(String string) {
-        return string == null || string.length() == 0;
     }
 
     public static int parseVersionInt(String[] versionCode, int position) {
@@ -366,12 +294,5 @@ public class Utils {
         }
 
         return isUpdateAvailable;
-    }
-
-    public static double getNonNanDouble(Double doubleValue) {
-        if (doubleValue.isNaN())
-            return 0;
-        else
-            return doubleValue;
     }
 }
