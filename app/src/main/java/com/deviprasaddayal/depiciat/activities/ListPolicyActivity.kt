@@ -70,7 +70,7 @@ class ListPolicyActivity : BaseActivity(), OnFileActionListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.fab_add_new_policy -> gotoCreateNewPolicy()
+            R.id.fab_add_new_policy -> /*gotoCreateNewPolicy()*/ fileManager.showFileSourceDialog()
         }
     }
 
@@ -103,7 +103,7 @@ class ListPolicyActivity : BaseActivity(), OnFileActionListener {
         startActivityForResult(addNewPolicyIntent, REQUEST_ADD_NEW_POLICY)
     }
 
-    override fun onFilePathCreatedForCamera(imagePath: String?, imageFile: File?) {
+    override fun onFilePathCreatedForCamera(imagePath: String, imageFile: File) {
         Utils.logi(TAG, "onFilePathCreatedForCamera: $imagePath")
     }
 
@@ -115,7 +115,7 @@ class ListPolicyActivity : BaseActivity(), OnFileActionListener {
         Utils.logi(TAG, "onFileViewRequest: ")
     }
 
-    override fun onFileDeleted(position: Int, removedFileName: String?) {
+    override fun onFileDeleted(position: Int, removedFileName: String) {
         Utils.logi(TAG, "onFileDeleted: $removedFileName")
     }
 }
