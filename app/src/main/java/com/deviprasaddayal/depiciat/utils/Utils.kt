@@ -88,46 +88,6 @@ object Utils {
         return Runnable { activity.onBackPressed() }
     }
 
-    fun handleError(context: Context/*, VolleyError error*/) {
-        var errorMessage = "An unknown error occurred."
-        var errorDrawable = R.drawable.new_info_wrong_icon
-
-        if (!Utils.isNetworkAvailable(context)) {
-            errorMessage = "We couldn't connect to internet. Please check your connection and retry."
-            errorDrawable = R.drawable.new_info_network_icon
-
-        } /*else if (error instanceof AuthFailureError) {
-            errorMessage = "We have failed to authenticate. Please login again and retry.";
-
-        } else if (error instanceof NoConnectionError) {
-            errorMessage = "We couldn't connect to server. Please try after sometime.";
-            errorDrawable = R.drawable.new_info_wrong_icon;
-
-        } else if (error instanceof NetworkError) {
-            errorMessage = "Our server might be running down. Please retry after sometime.";
-
-        } else if (error instanceof ParseError) {
-            errorMessage = "We couldn't read response.";
-
-        } else if (error instanceof ServerError) {
-            errorMessage = "You might have entered wrong or forgot to add some information. Please check and retry.";
-
-        } else if (error instanceof TimeoutError) {
-            errorMessage = "We're facing a very slow network condition. Please check your connection and retry.";
-            errorDrawable = R.drawable.new_info_sorry_icon;
-        }*/
-
-        handleError(context, errorMessage, errorDrawable)
-    }
-
-    fun handleError(context: Context, error: String, errorDrawable: Int) {
-        DialogUtils.showFailureDialog(context, error, errorDrawable, null)
-    }
-
-    fun handleError(context: Context, error: String) {
-        DialogUtils.showFailureDialog(context, error)
-    }
-
     fun hideSoftKeyboard(context: Context?) {
         if (context != null) {
             if ((context as Activity).currentFocus != null) {

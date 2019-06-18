@@ -19,4 +19,5 @@
     <dimen name="info_icon_size">60dp</dimen>
     <dimen name="margin_16">16dp</dimen>
     <dimen name="height_appbar">192dp</dimen>
+	<dimen name="margin_4">4dp</dimen>
 </resources>

@@ -9,8 +9,10 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
         super.setContentView(layoutResID)
 
         setUpToolbar()
+
         initialiseViews()
         initialiseListeners()
+        setDataToViews()
 
         setUpViewPager()
         setUpRecycler()
@@ -21,6 +23,8 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
     abstract fun initialiseViews()
 
     abstract fun initialiseListeners()
+
+    abstract fun setDataToViews()
 
     open fun setUpViewPager(){}
 

@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deviprasaddayal.depiciat.R
-import com.deviprasaddayal.depiciat.models.RowPolicyModel
+import com.deviprasaddayal.depiciat.models.ItemPolicyModel
 
 class ListPolicyAdapter(
     var context: Context,
-    var rowPolicyModels: ArrayList<RowPolicyModel>
+    var itemPolicyModels: ArrayList<ItemPolicyModel>
 ): RecyclerView.Adapter<ListPolicyAdapter.PolicyHolder>() {
 
 
@@ -19,7 +19,7 @@ class ListPolicyAdapter(
     }
 
     override fun getItemCount(): Int {
-        return /*rowPolicyModels.size*/ 20
+        return /*itemPolicyModels.size*/ 20
     }
 
     override fun onBindViewHolder(holder: PolicyHolder, position: Int) {

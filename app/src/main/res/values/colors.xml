@@ -21,4 +21,8 @@
 
     <color name="colorGrayLight">#78909c</color>
     <color name="colorGray">#455a64</color>
+
+    <color name="color_stateFlowPrevious">#37474f</color>
+    <color name="color_stateFlowCurrent">#FFFFFF</color>
+    <color name="color_stateFlowNext">#78909c</color>
 </resources>

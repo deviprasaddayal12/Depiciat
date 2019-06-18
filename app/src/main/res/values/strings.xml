@@ -2,4 +2,5 @@
     <string name="app_name">Depiciat</string>
     <string name="app_update_msg">You\'re using an old version of the application. Update to the latest version to enjoy updated features.</string>
     <string name="data_loss_alert">If you logout all asynced data will be lost.</string>
+	<string name="proceed_to_next">Proceed To Next</string>
 </resources>

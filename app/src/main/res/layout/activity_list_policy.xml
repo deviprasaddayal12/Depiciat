@@ -36,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recycler_list_policies"
+            android:id="@+id/rv_listPolicies"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:behavior_overlapTop="52dp"
             tools:listitem="@layout/row_policy"
@@ -51,6 +51,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:src="@drawable/round_add_24"
-            android:id="@+id/fab_add_new_policy"/>
+            android:id="@+id/fab_addNewPolicy"/>
 
 </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
