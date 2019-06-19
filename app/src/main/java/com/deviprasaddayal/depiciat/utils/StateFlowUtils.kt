@@ -13,7 +13,7 @@ object StateFlowUtils {
             stateFlowModels.add(
                     StateFlowModel(
                             stateTitle = stateTitles[position],
-                            statePosition = position,
+                            statePosition = position + 1,
                             currentState = StateFlow.STATE_NEXT))
         }
         return stateFlowModels
