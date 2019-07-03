@@ -20,44 +20,80 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dayal Deviprasad Das"
-                style="@style/TextAppearance.MaterialComponents.Headline6"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
+                android:text="Dayal Deviprasad Das (24 yrs)"
+                android:fontFamily="@font/montserrat_extra_bold"
                 android:id="@+id/tv_nameBearer"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Premium: Rs 1200/- @Quaterly"
-                style="@style/TextAppearance.MaterialComponents.Body2"
-                android:id="@+id/tv_premiumDetails"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_fromTopViewVertically"
-                android:text="Next Due: 15th June, 2019"
-                style="@style/TextAppearance.MaterialComponents.Body1"
-                android:textStyle="bold"
-                android:textColor="@color/colorAccent"
-                android:id="@+id/tv_dueNext"/>
+            <TextView
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:text="Policy Number: "/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_fromTopViewVertically"
-                android:text="Policy Number: AZ1287FBH456"
-                style="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:id="@+id/tv_numberPolicy"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/app_font_bold"
+                    android:textColor="@color/colorTextDark"
+                    android:text="AZ1287FBH456"
+                    android:id="@+id/tv_numberPolicy"/>
+        </LinearLayout>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Last Due: 15th March, 2019"
-                style="@style/TextAppearance.MaterialComponents.Caption"
-                android:id="@+id/tv_dueLast"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
 
+            <TextView
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:text="Premium: "/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/app_font_bold"
+                    android:textColor="@color/colorTextDark"
+                    android:text="Rs 1200/- @Quaterly"
+                    android:id="@+id/tv_premiumDetails"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Last Due: "/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15th March, 2019"
+                    android:textColor="@color/colorTextDark"
+                    android:id="@+id/tv_dueLast"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next Due: "/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15th June, 2019"
+                    android:fontFamily="@font/montserrat_extra_bold"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/tv_dueNext"/>
+        </LinearLayout>
     </LinearLayout>
-
 </com.google.android.material.transformation.TransformationChildCard>

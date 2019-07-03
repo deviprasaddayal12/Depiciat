@@ -13,7 +13,9 @@ import com.deviprasaddayal.depiciat.models.ItemPolicyModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListPolicyActivity : BaseActivity() {
-    val TAG = ListPolicyActivity::class.java.canonicalName
+    companion object {
+        val TAG = ListPolicyActivity::class.java.canonicalName
+    }
 
     private val REQUEST_ADD_NEW_POLICY = 123
 

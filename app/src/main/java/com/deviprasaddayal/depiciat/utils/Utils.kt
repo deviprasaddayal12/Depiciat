@@ -30,7 +30,7 @@ object Utils {
     private val digitsAfterDecimal = 3
     private val decimal = "."
 
-    private val shouldLog = true
+    var isNetworkAvailable = true
 
     /**
      * This callback generates an input filter for quantity edittext which, as a result,
@@ -69,48 +69,18 @@ object Utils {
             return arrayOf(floatMaxThresholdFilter, floatMaxLengthFilter)
         }
 
-    fun loge(tag: String, message: String) {
-        if (shouldLog)
-            Log.e(tag, message)
-    }
-
-    fun logi(tag: String, message: String) {
-        if (shouldLog)
-            Log.i(tag, message)
-    }
-
-    fun logd(tag: String, message: String) {
-        if (shouldLog)
-            Log.d(tag, message)
-    }
-
     fun getBackRunnable(activity: Activity): Runnable {
         return Runnable { activity.onBackPressed() }
     }
 
-    fun hideSoftKeyboard(context: Context?) {
-        if (context != null) {
-            if ((context as Activity).currentFocus != null) {
-                val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                inputMethodManager.hideSoftInputFromWindow(context.currentFocus!!.windowToken, 0)
-            }
-        }
-    }
-
-    fun showSoftKeyBoard(context: Context, etSearch: EditText) {
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.toggleSoftInputFromWindow(etSearch.applicationWindowToken, InputMethodManager.SHOW_FORCED, 0)
-    }
-
     fun isNetworkAvailable(context: Context?): Boolean {
-        var status = false
         if (context != null) {
             val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val activeNetworkInfo = connectivityManager.activeNetworkInfo
             if (activeNetworkInfo != null)
-                status = activeNetworkInfo.isAvailable
+                isNetworkAvailable = activeNetworkInfo.isAvailable
         }
-        return status
+        return isNetworkAvailable
 
     }
 

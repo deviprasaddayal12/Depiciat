@@ -10,9 +10,12 @@
 	<com.google.android.material.button.MaterialButton
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+		app:strokeColor="@color/colorAccent"
 		android:layout_marginStart="@dimen/margin_16"
 		android:layout_marginEnd="@dimen/margin_4"
-		app:icon="@drawable/round_arrow_back_24px"/>
+		app:icon="@drawable/round_arrow_back_24px"
+	android:id="@+id/btn_goPrevious"/>
 
 	<com.google.android.material.button.MaterialButton
 		android:layout_width="0dp"
@@ -22,5 +25,6 @@
 		android:layout_marginEnd="@dimen/margin_16"
 		android:text="@string/proceed_to_next"
 		app:icon="@drawable/round_arrow_forward_24px"
-		android:layoutDirection="rtl"/>
+		android:layoutDirection="rtl"
+	android:id="@+id/btn_goNext"/>
 </LinearLayout>

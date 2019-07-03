@@ -1,77 +1,118 @@
 package com.deviprasaddayal.depiciat.activities
 
-import android.app.Activity
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.view.TextureView
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.deviprasaddayal.depiciat.R
-import com.deviprasaddayal.depiciat.adapters.ListPolicyAdapter
 import com.deviprasaddayal.depiciat.adapters.StateFlowAdapter
+import com.deviprasaddayal.depiciat.adapters.ViewPagerAdapter
+import com.deviprasaddayal.depiciat.fragments.AddBankFragment
+import com.deviprasaddayal.depiciat.fragments.AddBearerFragment
+import com.deviprasaddayal.depiciat.fragments.AddNomineeFragment
+import com.deviprasaddayal.depiciat.fragments.AddPolicyFragment
 import com.deviprasaddayal.depiciat.listeners.OnFileActionListener
+import com.deviprasaddayal.depiciat.managers.ContentManager
 import com.deviprasaddayal.depiciat.managers.FileManager
 import com.deviprasaddayal.depiciat.models.StateFlowModel
+import com.deviprasaddayal.depiciat.utils.LogUtils
 import com.deviprasaddayal.depiciat.utils.StateFlowUtils
-import com.deviprasaddayal.depiciat.utils.Utils
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.tabs.TabLayout
 import java.io.File
 
-class AddPolicyActivity : BaseActivity(), OnFileActionListener {
-    val TAG = AddPolicyActivity::class.java.canonicalName
+class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPageChangeListener {
+    companion object {
+        val TAG = AddPolicyActivity::class.java.canonicalName
+    }
 
-    lateinit var toolbar: Toolbar
+    lateinit var tabLayout : TabLayout
+    lateinit var viewPager : ViewPager
+    lateinit var viewPagerAdapter : ViewPagerAdapter
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var stateFlowAdapter: StateFlowAdapter
-    lateinit var stateFlowModels: ArrayList<StateFlowModel>
+    lateinit var btnPrevious : MaterialButton
+    lateinit var btnNext : MaterialButton
 
-    lateinit var fileManager: FileManager
+    lateinit var fileManager : FileManager
+    lateinit var contentManager : ContentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        fileManager = FileManager(this, this)
         setContentView(R.layout.activity_add_policy)
-    }
 
-    override fun setUpToolbar() {
-        toolbar = findViewById(R.id.toolbar)
-        toolbar.title = "Hello, Dayal"
-        toolbar.subtitle = "Please fill the details to create new policy"
+        fileManager = FileManager(this, this)
+        contentManager = ContentManager(findViewById(R.id.root))
     }
 
     override fun initialiseViews() {
-
+        btnPrevious = findViewById(R.id.btn_goPrevious)
+        btnNext = findViewById(R.id.btn_goNext)
     }
 
     override fun initialiseListeners() {
+        btnPrevious.setOnClickListener(this)
+        btnNext.setOnClickListener(this)
+    }
+
+    override fun setUpViewPager() {
+        tabLayout = findViewById(R.id.tl_add_policy)
+        viewPager = findViewById(R.id.vp_container)
+
+        viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+        viewPagerAdapter.addFragment(AddBearerFragment(), "Bearer")
+        viewPagerAdapter.addFragment(AddNomineeFragment(), "Nominee")
+        viewPagerAdapter.addFragment(AddPolicyFragment(), "Policy")
+        viewPagerAdapter.addFragment(AddBankFragment(), "Bank")
+
+        viewPager.adapter = viewPagerAdapter
+        tabLayout.setupWithViewPager(viewPager)
+
+        viewPager.addOnPageChangeListener(this)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        contentManager.onLoadingFinished()
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
 
     }
 
-    override fun setDataToViews() {
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
     }
 
-    override fun setUpRecycler() {
-        stateFlowModels = StateFlowUtils.getStateList(
-                arrayOf("Bearer Details",
-                        "Policy Details",
-                        "Nominee Details",
-                        "Bank Details"))
-
-        recyclerView = findViewById(R.id.rv_stateAddPolicy)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        stateFlowAdapter = StateFlowAdapter(this, stateFlowModels)
-
-        recyclerView.adapter = stateFlowAdapter
+    override fun onPageSelected(position: Int) {
+        findViewById<TextView>(R.id.tv_addPolicyTitle).text = getDescriptionForPosition(position)
     }
 
     override fun onClick(v: View?) {
+        when(v?.id) {
+            R.id.btn_goPrevious -> {
 
+            }
+            R.id.btn_goNext -> {
+
+            }
+        }
+    }
+
+    private fun getDescriptionForPosition(position: Int) : String {
+        when (position) {
+            0 -> return "Bearer Details"
+            1 -> return "Nominee Details"
+            2 -> return "Policy Details"
+            3 -> return "Bank Details"
+            else -> return "Fragment Title"
+        }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -80,37 +121,37 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     fileManager.gotoCamera()
                 else
-                    Utils.loge(TAG, "Camera permission denied.");
+                    LogUtils.loge(TAG, "Camera permission denied.");
             }
             FileManager.Requests.GALLERY -> {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     fileManager.gotoGallery()
                 else
-                    Utils.loge(TAG, "Gallery permission denied.");
+                    LogUtils.loge(TAG, "Gallery permission denied.");
             }
             FileManager.Requests.BROWSER -> {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     fileManager.gotoFileBrowser()
                 else
-                    Utils.loge(TAG, "Browser permission denied.");
+                    LogUtils.loge(TAG, "Browser permission denied.");
             }
-            else -> Utils.loge(TAG, "Permission result is out of scope: ${permissions[0]}")
+            else -> LogUtils.loge(TAG, "Permission result is out of scope: ${permissions[0]}")
         }
     }
 
     override fun onFilePathCreatedForCamera(imagePath: String, imageFile: File) {
-        Utils.logi(TAG, "onFilePathCreatedForCamera: $imagePath")
+        LogUtils.logi(TAG, "onFilePathCreatedForCamera: $imagePath")
     }
 
     override fun onFileAddRequest() {
-        Utils.logi(TAG, "onFileAddRequest: ")
+        LogUtils.logi(TAG, "onFileAddRequest: ")
     }
 
     override fun onFileViewRequest(position: Int) {
-        Utils.logi(TAG, "onFileViewRequest: ")
+        LogUtils.logi(TAG, "onFileViewRequest: ")
     }
 
     override fun onFileDeleted(position: Int, removedFileName: String) {
-        Utils.logi(TAG, "onFileDeleted: $removedFileName")
+        LogUtils.logi(TAG, "onFileDeleted: $removedFileName")
     }
 }

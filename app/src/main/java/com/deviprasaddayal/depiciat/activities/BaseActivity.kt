@@ -1,6 +1,9 @@
 package com.deviprasaddayal.depiciat.activities
 
+import android.content.Context
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
@@ -18,13 +21,13 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
         setUpRecycler()
     }
 
-    abstract fun setUpToolbar()
+    open fun setUpToolbar() {}
 
-    abstract fun initialiseViews()
+    open fun initialiseViews() {}
 
-    abstract fun initialiseListeners()
+    open fun initialiseListeners() {}
 
-    abstract fun setDataToViews()
+    open fun setDataToViews() {}
 
     open fun setUpViewPager(){}
 
@@ -32,5 +35,15 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
 
     override fun onClick(v: View?) {
         // to be implemented in extending classes
+    }
+
+    fun hideSoftKeyboard() {
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+    }
+
+    fun showSoftKeyBoard(editText: EditText) {
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.toggleSoftInputFromWindow(editText.applicationWindowToken, InputMethodManager.SHOW_FORCED, 0)
     }
 }
