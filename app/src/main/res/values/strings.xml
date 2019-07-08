@@ -3,4 +3,16 @@
     <string name="app_update_msg">You\'re using an old version of the application. Update to the latest version to enjoy updated features.</string>
     <string name="data_loss_alert">If you logout all asynced data will be lost.</string>
 	<string name="proceed_to_next">Proceed To Next</string>
+
+    <string name="ttl_details_bearer">Bearer Details</string>
+    <string name="ttl_details_nominee">Nominee Details</string>
+    <string name="ttl_details_policy">Policy Details</string>
+    <string name="ttl_details_bank">Bank Details</string>
+
+    <string name="sttl_details_bearer">Here in, enter all the bearer related information into their res. fields</string>
+    <string name="sttl_details_nominee">Here in, enter all the nominee related information into their res. fields</string>
+    <string name="sttl_details_policy">Here in, enter all the policy related information into their res. fields</string>
+    <string name="sttl_details_bank">Here in, enter all the bank related information into their res. fields</string>
+    <string name="ttl_app">Decipat</string>
+    <string name="sttl_app">Find your own guide to your destiny</string>
 </resources>

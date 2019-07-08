@@ -2,15 +2,10 @@ package com.deviprasaddayal.depiciat.activities
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.TextureView
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.deviprasaddayal.depiciat.R
-import com.deviprasaddayal.depiciat.adapters.StateFlowAdapter
 import com.deviprasaddayal.depiciat.adapters.ViewPagerAdapter
 import com.deviprasaddayal.depiciat.fragments.AddBankFragment
 import com.deviprasaddayal.depiciat.fragments.AddBearerFragment
@@ -19,9 +14,7 @@ import com.deviprasaddayal.depiciat.fragments.AddPolicyFragment
 import com.deviprasaddayal.depiciat.listeners.OnFileActionListener
 import com.deviprasaddayal.depiciat.managers.ContentManager
 import com.deviprasaddayal.depiciat.managers.FileManager
-import com.deviprasaddayal.depiciat.models.StateFlowModel
 import com.deviprasaddayal.depiciat.utils.LogUtils
-import com.deviprasaddayal.depiciat.utils.StateFlowUtils
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import java.io.File
@@ -91,7 +84,9 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
     }
 
     override fun onPageSelected(position: Int) {
-        findViewById<TextView>(R.id.tv_addPolicyTitle).text = getDescriptionForPosition(position)
+        val descriptions = getDescriptionForPosition(position)
+        findViewById<TextView>(R.id.tv_addPolicyTitle).text = descriptions[0]
+        findViewById<TextView>(R.id.tv_addPolicySubTitle).text = descriptions[1]
     }
 
     override fun onClick(v: View?) {
@@ -105,13 +100,13 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
         }
     }
 
-    private fun getDescriptionForPosition(position: Int) : String {
+    private fun getDescriptionForPosition(position: Int) : Array<String> {
         when (position) {
-            0 -> return "Bearer Details"
-            1 -> return "Nominee Details"
-            2 -> return "Policy Details"
-            3 -> return "Bank Details"
-            else -> return "Fragment Title"
+            0 -> return arrayOf(resources.getString(R.string.ttl_details_bearer), resources.getString(R.string.sttl_details_bearer))
+            1 -> return arrayOf(resources.getString(R.string.ttl_details_nominee), resources.getString(R.string.sttl_details_nominee))
+            2 -> return arrayOf(resources.getString(R.string.ttl_details_policy), resources.getString(R.string.sttl_details_policy))
+            3 -> return arrayOf(resources.getString(R.string.ttl_details_bank), resources.getString(R.string.sttl_details_bank))
+            else -> return arrayOf(resources.getString(R.string.ttl_app), resources.getString(R.string.sttl_app))
         }
     }
 
