@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:layout_gravity="bottom"
-	android:id="@+id/root"
-	android:orientation="horizontal">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/margin_16"
+              android:background="@drawable/linear_white_gradient"
+              android:layout_gravity="bottom"
+              android:orientation="horizontal"
+              android:id="@+id/root">
 
-	<com.google.android.material.button.MaterialButton
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-		app:strokeColor="@color/colorAccent"
-		android:layout_marginStart="@dimen/margin_16"
-		android:layout_marginEnd="@dimen/margin_4"
-		app:icon="@drawable/round_arrow_back_24px"
-	android:id="@+id/btn_goPrevious"/>
+    <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/colorAccent"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_4"
+            app:icon="@drawable/round_arrow_back_24px"
+            android:id="@+id/btn_goPrevious"/>
 
-	<com.google.android.material.button.MaterialButton
-		android:layout_width="0dp"
-		android:layout_weight="1"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="@dimen/margin_4"
-		android:layout_marginEnd="@dimen/margin_16"
-		android:text="@string/proceed_to_next"
-		app:icon="@drawable/round_arrow_forward_24px"
-		android:layoutDirection="rtl"
-	android:id="@+id/btn_goNext"/>
+    <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:text="@string/proceed_to_next"
+            app:icon="@drawable/round_arrow_forward_24px"
+            android:layoutDirection="rtl"
+            android:id="@+id/btn_goNext"/>
 </LinearLayout>

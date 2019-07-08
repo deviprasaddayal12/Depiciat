@@ -20,4 +20,6 @@
     <dimen name="margin_16">16dp</dimen>
     <dimen name="height_appbar">192dp</dimen>
 	<dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_separatorHorizontal">4dp</dimen>
+    <dimen name="margin_separatorVertical">4dp</dimen>
 </resources>

@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">Depiciat</string>
+
+    <string name="ttl_app">Decipat</string>
+    <string name="sttl_app">Find your own guide to your destiny</string>
+
+    <string name="info_noIdea">Information of action is unexpected or out of scope.</string>
+
+    <string name="info_denial_ofCameraPermission">Camera permission denied.</string>
+    <string name="info_denial_ofGalleryPermission">Gallery permission denied.</string>
+    <string name="info_denial_ofBrowserPermission">File Browser permission denied.</string>
+
     <string name="app_update_msg">You\'re using an old version of the application. Update to the latest version to enjoy updated features.</string>
-    <string name="data_loss_alert">If you logout all asynced data will be lost.</string>
-	<string name="proceed_to_next">Proceed To Next</string>
+    <string name="data_loss_alert">If you logout all unsynced data will be lost.</string>
+
+    <string name="name_bearer">Bearer</string>
+    <string name="name_nominee">Nominee</string>
+    <string name="name_policy">Policy</string>
+    <string name="name_bank">Bank</string>
 
     <string name="ttl_details_bearer">Bearer Details</string>
     <string name="ttl_details_nominee">Nominee Details</string>
@@ -13,6 +27,22 @@
     <string name="sttl_details_nominee">Here in, enter all the nominee related information into their res. fields</string>
     <string name="sttl_details_policy">Here in, enter all the policy related information into their res. fields</string>
     <string name="sttl_details_bank">Here in, enter all the bank related information into their res. fields</string>
-    <string name="ttl_app">Decipat</string>
-    <string name="sttl_app">Find your own guide to your destiny</string>
+
+    <string name="proceed_to_next">Proceed To Next</string>
+
+    <string name="hint_bearer_name">Ex- Dayal Deviprasad Das</string>
+    <string name="hint_bearer_dob">12th August, 1990</string>
+
+    <string name="helper_bearer_name">Enter policy holder name</string>
+    <string name="helper_bearer_dob">Provide DoB as on provided supporting documents. Ex - PAN</string>
+
+    <string name="val_father">Father</string>
+    <string name="val_husband">Husband</string>
+    <string name="val_care_taker">Care Taker</string>
+
+    <string name="lbl_bearer_name">Who\'s the bearer of the policy?</string>
+    <string name="lbl_bearer_guardian">Who\'s the guardian of bearer?</string>
+    <string name="lbl_bearer_guardian_name">What\'s the name of guardian?</string>
+    <string name="lbl_bearer_age">So, age is calculated to be:</string>
+    <string name="lbl_bearer_dob">When is bearer\'s birthday?</string>
 </resources>

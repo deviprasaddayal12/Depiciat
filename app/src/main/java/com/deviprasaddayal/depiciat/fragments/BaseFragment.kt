@@ -34,6 +34,10 @@ abstract class BaseFragment: Fragment(), View.OnClickListener {
         // to be implemented in extending classes
     }
 
+    fun getAppString(resourceId: Int) : String {
+        return resources.getString(resourceId)
+    }
+
     fun hideSoftKeyboard() {
         val inputMethodManager = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(activity?.currentFocus!!.windowToken, 0)

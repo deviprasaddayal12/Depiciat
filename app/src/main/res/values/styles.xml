@@ -34,6 +34,16 @@
         <item name="android:layout_marginStart">@dimen/margin_separatorHorizontal</item>
         <item name="android:layout_marginEnd">@dimen/margin_separatorHorizontal</item>
     </style>
-    <dimen name="margin_separatorHorizontal">4dp</dimen>
-    <dimen name="margin_separatorVertical">4dp</dimen>
+
+    <style name="labelAppearance">
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="helperAppearance">
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>

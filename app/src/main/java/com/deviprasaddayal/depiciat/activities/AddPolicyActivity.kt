@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
+
 import com.deviprasaddayal.depiciat.R
 import com.deviprasaddayal.depiciat.adapters.ViewPagerAdapter
 import com.deviprasaddayal.depiciat.fragments.AddBankFragment
@@ -15,6 +16,7 @@ import com.deviprasaddayal.depiciat.listeners.OnFileActionListener
 import com.deviprasaddayal.depiciat.managers.ContentManager
 import com.deviprasaddayal.depiciat.managers.FileManager
 import com.deviprasaddayal.depiciat.utils.LogUtils
+
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import java.io.File
@@ -59,10 +61,10 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
 
         viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
-        viewPagerAdapter.addFragment(AddBearerFragment(), "Bearer")
-        viewPagerAdapter.addFragment(AddNomineeFragment(), "Nominee")
-        viewPagerAdapter.addFragment(AddPolicyFragment(), "Policy")
-        viewPagerAdapter.addFragment(AddBankFragment(), "Bank")
+        viewPagerAdapter.addFragment(AddBearerFragment(), getAppString(R.string.name_bearer))
+        viewPagerAdapter.addFragment(AddNomineeFragment(), getAppString(R.string.name_nominee))
+        viewPagerAdapter.addFragment(AddPolicyFragment(), getAppString(R.string.name_policy))
+        viewPagerAdapter.addFragment(AddBankFragment(), getAppString(R.string.name_bank))
 
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
@@ -87,6 +89,8 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
         val descriptions = getDescriptionForPosition(position)
         findViewById<TextView>(R.id.tv_addPolicyTitle).text = descriptions[0]
         findViewById<TextView>(R.id.tv_addPolicySubTitle).text = descriptions[1]
+//        toolbar.title = descriptions[0]
+//        toolbar.subtitle = descriptions[1
     }
 
     override fun onClick(v: View?) {
@@ -102,11 +106,11 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
 
     private fun getDescriptionForPosition(position: Int) : Array<String> {
         when (position) {
-            0 -> return arrayOf(resources.getString(R.string.ttl_details_bearer), resources.getString(R.string.sttl_details_bearer))
-            1 -> return arrayOf(resources.getString(R.string.ttl_details_nominee), resources.getString(R.string.sttl_details_nominee))
-            2 -> return arrayOf(resources.getString(R.string.ttl_details_policy), resources.getString(R.string.sttl_details_policy))
-            3 -> return arrayOf(resources.getString(R.string.ttl_details_bank), resources.getString(R.string.sttl_details_bank))
-            else -> return arrayOf(resources.getString(R.string.ttl_app), resources.getString(R.string.sttl_app))
+            0 -> return arrayOf(getAppString(R.string.ttl_details_bearer), getAppString(R.string.sttl_details_bearer))
+            1 -> return arrayOf(getAppString(R.string.ttl_details_nominee), getAppString(R.string.sttl_details_nominee))
+            2 -> return arrayOf(getAppString(R.string.ttl_details_policy), getAppString(R.string.sttl_details_policy))
+            3 -> return arrayOf(getAppString(R.string.ttl_details_bank), getAppString(R.string.sttl_details_bank))
+            else -> return arrayOf(getAppString(R.string.ttl_app), getAppString(R.string.sttl_app))
         }
     }
 

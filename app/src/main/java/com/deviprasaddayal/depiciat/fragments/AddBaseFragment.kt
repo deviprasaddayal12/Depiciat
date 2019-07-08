@@ -1,10 +1,13 @@
 package com.deviprasaddayal.depiciat.fragments
 
 import android.view.View
+import com.deviprasaddayal.depiciat.listeners.OnTextChangeListener
+import com.google.android.material.textfield.TextInputEditText
 
-abstract class AddBaseFragment: BaseFragment() {
+abstract class AddBaseFragment: BaseFragment(), OnTextChangeListener {
+    val TAG = AddBaseFragment::class.java.canonicalName
 
-    abstract fun viewPreviousDetails()
-
-    abstract fun saveAndProceedToNext()
+    override fun onTextChanged(textInputEditText: TextInputEditText, isEmpty: Boolean, text: String) {
+        TODO("created new callback: not implemented")
+    }
 }

@@ -2,27 +2,29 @@
 <com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-android:id="@+id/root">
+        android:id="@+id/root">
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:elevation="@dimen/elevation_rowCard">
 
-        <include layout="@layout/layout_toolbar"/>
+        <!--<include layout="@layout/layout_toolbar"/>-->
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:titleEnabled="false">
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                app:titleEnabled="true">
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    app:layout_collapseMode="parallax"
                     android:paddingStart="@dimen/margin_16"
                     android:paddingEnd="@dimen/margin_16"
                     android:paddingBottom="@dimen/margin_16">
@@ -33,7 +35,7 @@ android:id="@+id/root">
                         android:text="Bearer Details"
                         style="@style/CollapsingAppBarTitleStyle"
                         android:textStyle="bold"
-                android:id="@+id/tv_addPolicyTitle"/>
+                        android:id="@+id/tv_addPolicyTitle"/>
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -47,6 +49,7 @@ android:id="@+id/root">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="snap"
+                app:tabMode="scrollable"
                 android:id="@+id/tl_add_policy">
 
         </com.google.android.material.tabs.TabLayout>

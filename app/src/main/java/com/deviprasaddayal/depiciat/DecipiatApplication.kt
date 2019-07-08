@@ -1,6 +1,7 @@
 package com.deviprasaddayal.depiciat
 
 import android.app.Application
+import android.content.res.Resources
 import com.google.firebase.FirebaseApp
 
 class DecipiatApplication : Application() {

@@ -20,12 +20,4 @@ class AddBankFragment: AddBaseFragment() {
     override fun initialiseListeners(view: View) {
 
     }
-
-    override fun viewPreviousDetails() {
-
-    }
-
-    override fun saveAndProceedToNext() {
-
-    }
 }

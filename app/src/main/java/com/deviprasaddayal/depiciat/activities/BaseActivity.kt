@@ -37,6 +37,10 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener{
         // to be implemented in extending classes
     }
 
+    fun getAppString(resourceId: Int) : String {
+        return resources.getString(resourceId)
+    }
+
     fun hideSoftKeyboard() {
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
