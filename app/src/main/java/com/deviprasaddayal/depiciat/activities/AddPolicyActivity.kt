@@ -47,6 +47,8 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
 
     override fun initialiseViews() {
         btnPrevious = findViewById(R.id.btn_goPrevious)
+        btnPrevious.isEnabled = false;
+
         btnNext = findViewById(R.id.btn_goNext)
     }
 
@@ -87,19 +89,23 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
 
     override fun onPageSelected(position: Int) {
         val descriptions = getDescriptionForPosition(position)
+
         findViewById<TextView>(R.id.tv_addPolicyTitle).text = descriptions[0]
         findViewById<TextView>(R.id.tv_addPolicySubTitle).text = descriptions[1]
-//        toolbar.title = descriptions[0]
-//        toolbar.subtitle = descriptions[1
+
+        btnPrevious.isEnabled = position != 0
+        btnNext.isEnabled = position != 3
     }
 
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.btn_goPrevious -> {
-
+                if (viewPager.currentItem > 0)
+                    viewPager.setCurrentItem(viewPager.currentItem - 1, true)
             }
             R.id.btn_goNext -> {
-
+                if (viewPager.currentItem < 4)
+                    viewPager.setCurrentItem(viewPager.currentItem + 1, true)
             }
         }
     }

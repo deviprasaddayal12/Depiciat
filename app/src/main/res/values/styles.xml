@@ -35,10 +35,16 @@
         <item name="android:layout_marginEnd">@dimen/margin_separatorHorizontal</item>
     </style>
 
-    <style name="labelAppearance">
+    <style name="headerAppearance">
         <item name="android:textColor">@color/colorTextDark</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="labelAppearance">
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="helperAppearance">
@@ -46,4 +52,14 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="TextViewAppearance">
+        <item name="android:background">@drawable/rounded_outline_1</item>
+        <item name="android:paddingTop">@dimen/margin_12</item>
+        <item name="android:paddingBottom">@dimen/margin_8</item>
+        <item name="android:paddingStart">@dimen/margin_8</item>
+        <item name="android:paddingEnd">@dimen/margin_8</item>
+        <item name="android:textSize">@dimen/text_18</item>
+    </style>
+    <dimen name="margin_12">12dp</dimen>
 </resources>

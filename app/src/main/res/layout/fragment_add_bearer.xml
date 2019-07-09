@@ -37,6 +37,77 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
+                android:text="@string/lbl_bearer_gender"
+                android:textAppearance="@style/labelAppearance"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rg_bearerGender">
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/val_male"
+                        android:id="@+id/rb_bearerMale"/>
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/val_female"
+                        android:id="@+id/rb_bearerFemale"/>
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/val_third_gender"
+                        android:id="@+id/rb_bearerThirdGender"/>
+            </RadioGroup>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@string/lbl_bearer_dob"
+                android:textAppearance="@style/labelAppearance"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:gravity="start|center_vertical"
+                android:id="@+id/btn_bearerDoB"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/helper_bearer_dob"
+                android:textAppearance="@style/helperAppearance"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:text="@string/lbl_bearer_age"
+                android:textAppearance="@style/labelAppearance"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextViewAppearance"
+                android:id="@+id/tv_bearerAge"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bearer_guardian"
                 android:textAppearance="@style/labelAppearance"/>
 
@@ -89,49 +160,26 @@
                     android:id="@+id/tiet_bearerGuardianName"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_16"
-                android:text="@string/lbl_bearer_dob"
-                android:textAppearance="@style/labelAppearance"/>
-
-        <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                app:strokeColor="@color/colorAccent"
-                android:gravity="start|center_vertical"
-                android:id="@+id/btn_bearerDoB"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/helper_bearer_dob"
-                android:textAppearance="@style/helperAppearance"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_16"
-                android:text="@string/lbl_bearer_age"
-                android:textAppearance="@style/labelAppearance"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                android:orientation="vertical">
 
             <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:text="@string/lbl_contact_details"
+                    style="@style/headerAppearance"/>
+
+            <View style="@style/Horizontal"/>
+        </LinearLayout>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
-                android:text="@string/lbl_bearer_name"
+                android:text="@string/lbl_bearer_phone"
                 android:textAppearance="@style/labelAppearance"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -142,14 +190,15 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_bearer_name"/>
+                    android:inputType="phone"
+                    android:id="@+id/tiet_bearerPhone"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
-                android:text="@string/lbl_bearer_name"
+                android:text="@string/lbl_bearer_mail"
                 android:textAppearance="@style/labelAppearance"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -160,14 +209,15 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_bearer_name"/>
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/tiet_bearerMail"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
-                android:text="@string/lbl_bearer_name"
+                android:text="@string/lbl_bearer_address"
                 android:textAppearance="@style/labelAppearance"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -178,7 +228,9 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_bearer_name"/>
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:id="@+id/tiet_bearerAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Space android:layout_width="match_parent"

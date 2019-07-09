@@ -22,4 +22,6 @@
 	<dimen name="margin_4">4dp</dimen>
     <dimen name="margin_separatorHorizontal">4dp</dimen>
     <dimen name="margin_separatorVertical">4dp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_18">18sp</dimen>
 </resources>

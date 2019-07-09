@@ -25,7 +25,7 @@ class AddBearerFragment: AddBaseFragment() {
     }
 
     override fun initialiseListeners(view: View) {
-        tietBearerName.addTextChangedListener(AppTextWatcher(tietBearerName, this))
+
     }
 
     override fun onTextChanged(textInputEditText: TextInputEditText, isEmpty: Boolean, text: String) {

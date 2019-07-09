@@ -45,4 +45,12 @@
     <string name="lbl_bearer_guardian_name">What\'s the name of guardian?</string>
     <string name="lbl_bearer_age">So, age is calculated to be:</string>
     <string name="lbl_bearer_dob">When is bearer\'s birthday?</string>
+    <string name="lbl_bearer_gender">What\'s the gender of the bearer?</string>
+    <string name="val_male">Male</string>
+    <string name="val_female">Female</string>
+    <string name="val_third_gender">Others</string>
+    <string name="lbl_contact_details">Contact Details</string>
+    <string name="lbl_bearer_phone">What\'s the contact number?</string>
+    <string name="lbl_bearer_mail">Where should his/her mail go?</string>
+    <string name="lbl_bearer_address">Where does he/she reside?</string>
 </resources>
