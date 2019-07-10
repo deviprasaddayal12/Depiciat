@@ -61,5 +61,13 @@
         <item name="android:paddingEnd">@dimen/margin_8</item>
         <item name="android:textSize">@dimen/text_18</item>
     </style>
+
+    <style name="UserViewStyle">
+        <item name="android:paddingTop">60dp</item>
+        <item name="android:paddingBottom">@dimen/margin_16</item>
+        <item name="android:paddingStart">@dimen/margin_16</item>
+        <item name="android:paddingEnd">@dimen/margin_16</item>
+    </style>
+
     <dimen name="margin_12">12dp</dimen>
 </resources>

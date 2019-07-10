@@ -21,14 +21,10 @@ class AddBearerFragment: AddBaseFragment() {
     }
 
     override fun initialiseViews(view: View) {
-        tietBearerName = view.findViewById(R.id.tiet_bearerName)
+
     }
 
     override fun initialiseListeners(view: View) {
-
-    }
-
-    override fun onTextChanged(textInputEditText: TextInputEditText, isEmpty: Boolean, text: String) {
 
     }
 }

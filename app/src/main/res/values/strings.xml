@@ -53,4 +53,26 @@
     <string name="lbl_bearer_phone">What\'s the contact number?</string>
     <string name="lbl_bearer_mail">Where should his/her mail go?</string>
     <string name="lbl_bearer_address">Where does he/she reside?</string>
+    <string name="lbl_nominee_name">Who\'s the nominee for the policy?</string>
+    <string name="lbl_nominee_gender">What\'s the gender of the nominee?</string>
+    <string name="lbl_nominee_age">How old is the nominee?</string>
+    <string name="lbl_nominee_relation">What\'s the relation of nominee?</string>
+    <string name="lbl_bank_ifsc">What\'s the IFSC?</string>
+    <string name="lbl_bank_name">What\'s the bank name?</string>
+    <string name="lbl_bank_branch">What\'s the branch name?</string>
+    <string name="lbl_bank_account">What\'s the account number?</string>
+    <string name="lbl_bank_account_confirm">Confirm account number:</string>
+    <string name="lbl_bank_micr">What\'s the MICR?</string>
+    <string name="lbl_policy_number">What\'s the policy number?</string>
+    <string name="lbl_policy_premium_mode">What\'s the choosen premium payment mode?</string>
+    <string name="val_monthly">Monthly</string>
+    <string name="val_quarterly">Quarterly</string>
+    <string name="val_half_yearly">Half-Yearly</string>
+    <string name="val_yearly">Yearly</string>
+    <string name="lbl_policy_premium_amount">What\'s the policy premium amount?</string>
+    <string name="lbl_policy_doc">What\'s the policy DoC(Date of Commencement)?</string>
+    <string name="lbl_policy_dom">What\'s the policy DoM(Date of Maturity)?</string>
+    <string name="lbl_policy_duration">What\'s the duration of the policy?</string>
+    <string name="lbl_policy_sum_assured">What\'s the sum assured?</string>
+    <string name="lbl_policy_name">What\'s the name of policy plan?</string>
 </resources>

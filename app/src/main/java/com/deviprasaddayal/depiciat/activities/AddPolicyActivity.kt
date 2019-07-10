@@ -2,6 +2,7 @@ package com.deviprasaddayal.depiciat.activities
 
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
@@ -27,6 +28,7 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
     }
 
     lateinit var tabLayout : TabLayout
+
     lateinit var viewPager : ViewPager
     lateinit var viewPagerAdapter : ViewPagerAdapter
 
@@ -47,7 +49,7 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
 
     override fun initialiseViews() {
         btnPrevious = findViewById(R.id.btn_goPrevious)
-        btnPrevious.isEnabled = false;
+        btnPrevious.isEnabled = false
 
         btnNext = findViewById(R.id.btn_goNext)
     }
@@ -68,10 +70,26 @@ class AddPolicyActivity : BaseActivity(), OnFileActionListener, ViewPager.OnPage
         viewPagerAdapter.addFragment(AddPolicyFragment(), getAppString(R.string.name_policy))
         viewPagerAdapter.addFragment(AddBankFragment(), getAppString(R.string.name_bank))
 
+        viewPager.offscreenPageLimit = 4
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
 
         viewPager.addOnPageChangeListener(this)
+
+        val tabTextView0 = LayoutInflater.from(this).inflate(R.layout.layout_tab_view, null, false) as TextView
+        val tabTextView1 = LayoutInflater.from(this).inflate(R.layout.layout_tab_view, null, false) as TextView
+        val tabTextView2 = LayoutInflater.from(this).inflate(R.layout.layout_tab_view, null, false) as TextView
+        val tabTextView3 = LayoutInflater.from(this).inflate(R.layout.layout_tab_view, null, false) as TextView
+
+        tabTextView0.text = getAppString(R.string.name_bearer)
+        tabTextView1.text = getAppString(R.string.name_nominee)
+        tabTextView2.text = getAppString(R.string.name_policy)
+        tabTextView3.text = getAppString(R.string.name_bank)
+
+        tabLayout.getTabAt(0)?.setCustomView(tabTextView0)
+        tabLayout.getTabAt(1)?.setCustomView(tabTextView1)
+        tabLayout.getTabAt(2)?.setCustomView(tabTextView2)
+        tabLayout.getTabAt(3)?.setCustomView(tabTextView3)
     }
 
     override fun onStart() {

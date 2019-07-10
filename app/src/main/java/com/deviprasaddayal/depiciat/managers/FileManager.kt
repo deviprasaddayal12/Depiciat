@@ -27,8 +27,7 @@ import java.io.File
 import java.io.IOException
 import java.util.ArrayList
 
-class FileManager(private val activity: Activity, private val onFileActionListener: OnFileActionListener) :
-    OnFileSourceChoiceListener {
+class FileManager(private val activity: Activity, private val onFileActionListener: OnFileActionListener) : OnFileSourceChoiceListener {
 
     private var namePrefix: String? = null
     private var storageDest: File? = null
