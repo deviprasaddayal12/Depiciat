@@ -6,15 +6,23 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/colorText</item>
-        <item name="android:textColorPrimary">@color/colorTextDark</item>
-        <item name="android:fontFamily">@font/app_font_regular</item>
         <item name="android:statusBarColor">@color/colorAccent</item>
     </style>
 
-    <style name="CollapsingAppBarTitleStyle" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/app_font_bold</item>
-        <item name="android:fontFamily">@font/app_font_bold</item>
+    <style name="Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">@dimen/radius_rowCard</item>
+        <item name="cardElevation">@dimen/elevation_rowCard</item>
+    </style>
+
+    <style name="Card.ListRow">
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
+        <item name="android:layout_marginStart">@dimen/margin_16</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16</item>
+    </style>
+
+    <style name="Child">
+        <item name="android:padding">@dimen/margin_8</item>
     </style>
 
     <style name="MaterialSeparator">
@@ -35,21 +43,49 @@
         <item name="android:layout_marginEnd">@dimen/margin_separatorHorizontal</item>
     </style>
 
-    <style name="headerAppearance">
+    <style name="AppTextAppearance">
+        <item name="android:fontFamily">@font/app_font_regular</item>
+    </style>
+
+    <style name="AppTextAppearance.Bold">
+        <item name="android:fontFamily">@font/app_font_bold</item>
+    </style>
+
+    <style name="AppTextAppearance.ExtraBold">
+        <item name="android:fontFamily">@font/app_font_extra_bold</item>
+    </style>
+
+    <style name="Text.Priority1.Large" parent="AppTextAppearance.ExtraBold">
+        <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Priority1" parent="AppTextAppearance.Bold">
         <item name="android:textColor">@color/colorTextDark</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="labelAppearance">
+    <style name="Text.Priority2" parent="AppTextAppearance">
         <item name="android:textColor">@color/colorTextDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Emphasise" parent="Text.Priority2">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Text.Labels" parent="AppTextAppearance">
+        <item name="android:textColor">@color/colorText</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="helperAppearance">
-        <item name="android:textColor">@color/colorTextDark</item>
-        <item name="android:textStyle">bold</item>
+    <style name="Text.Helpers" parent="AppTextAppearance">
+        <item name="android:textColor">@color/colorTextLight</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:textSize">10sp</item>
     </style>
 
@@ -68,6 +104,4 @@
         <item name="android:paddingStart">@dimen/margin_16</item>
         <item name="android:paddingEnd">@dimen/margin_16</item>
     </style>
-
-    <dimen name="margin_12">12dp</dimen>
 </resources>

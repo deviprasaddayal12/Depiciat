@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_ifsc"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_name"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_branch"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_account"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_account_confirm"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bank_micr"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

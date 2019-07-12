@@ -32,14 +32,15 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Emphasise"
                         android:text="Bearer Details"
-                        style="@style/CollapsingAppBarTitleStyle"
-                        android:textStyle="bold"
+                        android:textSize="32sp"
                         android:id="@+id/tv_addPolicyTitle"/>
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Labels"
                         android:text="An Avada Demo is a showcase, or an example, of what's possible with the Avada theme."
                         android:id="@+id/tv_addPolicySubTitle"/>
             </LinearLayout>
@@ -60,6 +61,7 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:id="@+id/vp_container">
+
 
     </androidx.viewpager.widget.ViewPager>
 

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fillViewport="true"
+        android:id="@+id/root">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.deviprasaddayal.depiciat.widgets.TestView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:tv_count="5"
+                app:tv_spacing="5.0"
+                app:tv_radius="30.0"/>
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/a"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/b"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/c"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/d"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/e"/>-->
+            <!--</LinearLayout>-->
+        <!--</HorizontalScrollView>-->
+
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/b"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/c"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/d"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/e"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/a"/>-->
+            <!--</LinearLayout>-->
+        <!--</HorizontalScrollView>-->
+
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+            <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/c"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/d"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/e"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/a"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/b"/>-->
+            <!--</LinearLayout>-->
+        <!--</HorizontalScrollView>-->
+
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/d"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/e"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/a"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/b"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/c"/>-->
+            <!--</LinearLayout>-->
+        <!--</HorizontalScrollView>-->
+
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/e"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/a"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/b"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/c"/>-->
+
+                <!--<ImageView-->
+                        <!--android:layout_width="400dp"-->
+                        <!--android:layout_height="720dp"-->
+                        <!--android:background="@drawable/d"/>-->
+            <!--</LinearLayout>-->
+        <!--</HorizontalScrollView>-->
+    </RelativeLayout>
+</ScrollView>

@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_nominee_name"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginBottom="@dimen/margin_4"
                 android:text="@string/lbl_nominee_age"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_nominee_relation"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_16"
                     android:text="@string/lbl_contact_details"
-                    style="@style/headerAppearance"/>
+                    style="@style/Text.Priority1"/>
 
             <View style="@style/Horizontal"/>
         </LinearLayout>
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bearer_phone"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bearer_mail"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:text="@string/lbl_bearer_address"
-                android:textAppearance="@style/labelAppearance"/>
+                android:textAppearance="@style/Text.Labels"/>
 
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

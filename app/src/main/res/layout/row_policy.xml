@@ -4,96 +4,100 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_rowCardStart"
-        android:layout_marginEnd="@dimen/margin_rowCardEnd"
-        android:layout_marginTop="@dimen/margin_rowCardTop"
-        android:layout_marginBottom="@dimen/margin_rowCardBottom"
-        app:cardCornerRadius="@dimen/radius_rowCard"
-        app:cardElevation="@dimen/elevation_rowCard">
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/Card.ListRow">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_childRoot">
+            style="@style/Child">
 
-        <TextView
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dayal Deviprasad Das (24 yrs)"
-                android:fontFamily="@font/montserrat_extra_bold"
-                android:id="@+id/tv_nameBearer"/>
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_photo_24px"
+                    app:civ_fill_color="@color/colorAccent"
+                    android:id="@+id/civ_user_image"/>
 
-            <TextView
-                    android:layout_width="112dp"
-                    android:layout_height="wrap_content"
-                    android:text="Policy Number: "/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/app_font_bold"
-                    android:textColor="@color/colorTextDark"
-                    android:text="AZ1287FBH456"
-                    android:id="@+id/tv_numberPolicy"/>
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-            <TextView
-                    android:layout_width="112dp"
-                    android:layout_height="wrap_content"
-                    android:text="Premium: "/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/app_font_bold"
-                    android:textColor="@color/colorTextDark"
-                    android:text="Rs 1200/- @Quaterly"
-                    android:id="@+id/tv_premiumDetails"/>
         </LinearLayout>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_8">
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/margin_16">
 
             <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Last Due: "/>
+                    android:textAppearance="@style/Text.Priority1"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/margin_8"
+                    tools:text="@tools:sample/full_names"
+                    android:id="@+id/tv_nameBearer"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15th March, 2019"
-                    android:textColor="@color/colorTextDark"
-                    android:id="@+id/tv_dueLast"/>
-        </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Policy Number: "
+                        android:textAppearance="@style/Text.Labels"/>
 
-            <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:text="Next Due: "/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:textAppearance="@style/Text.Priority2"
+                        tools:text="@tools:sample/us_zipcodes"
+                        android:id="@+id/tv_numberPolicy"/>
+            </LinearLayout>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15th June, 2019"
-                    android:fontFamily="@font/montserrat_extra_bold"
-                    android:textColor="@color/colorAccent"
-                    android:id="@+id/tv_dueNext"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Premium: "
+                        android:textAppearance="@style/Text.Labels"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Priority2"
+                        android:text="Rs 1200/-"
+                        android:id="@+id/tv_premiumDetails"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/Text.Labels"
+                        android:text="Next Due On: "/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:textAppearance="@style/Text.Priority2"
+                        tools:text="@tools:sample/date/ddmmyy"
+                        android:id="@+id/tv_dueNext"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.transformation.TransformationChildCard>

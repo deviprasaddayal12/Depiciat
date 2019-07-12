@@ -17,9 +17,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            android:name=".DecipiatApplication">
+            android:name=".DecipiatApplication"
+            android:allowBackup="true"
+            android:fullBackupContent="true">
 
-        <activity android:name=".activities.ListPolicyActivity">
+        <activity android:name=".activities.MainTestClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
@@ -28,8 +30,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.ListPolicyActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
         <activity android:name=".activities.AddPolicyActivity" />
-        <activity android:name=".activities.AddPolicyActivity2"/>
 
         <provider
                 android:name="androidx.core.content.FileProvider"
