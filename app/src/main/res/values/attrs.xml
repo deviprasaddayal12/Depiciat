@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="TestView">
-        <attr name="tv_count" format="integer" />
-        <attr name="tv_strokeWidth" format="integer" />
-        <attr name="tv_strokeColor" format="color" />
-        <attr name="tv_spacing" format="float" />
-        <attr name="tv_radius" format="float" />
-        <attr name="tv_colorList" format="reference" />
+        <attr name="testView_circleCount" format="integer" />
+        <attr name="testView_circleSpacing" format="integer" />
+        <attr name="testView_circleRadius" format="integer" />
+        <attr name="testView_strokeWidth" format="float" />
     </declare-styleable>
 </resources>
