@@ -21,22 +21,13 @@
             android:allowBackup="true"
             android:fullBackupContent="true">
 
-        <activity android:name=".activities.MainTestClass">
+        <activity android:name=".activities.ListPolicyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-
-        <activity android:name=".activities.ListPolicyActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<action android:name="android.intent.action.VIEW"/>-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
         </activity>
 
         <activity android:name=".activities.AddPolicyActivity" />
